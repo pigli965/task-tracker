@@ -10,10 +10,11 @@ def tracker():
     pass
 
 
-@tracker.command('add',short_help='Add your task', type=any)
-def add( **kwargs):  
+@tracker.command('add',short_help='Add your task')
+def add_task( **kwargs):  
     task=click.prompt('Please add your task')
-    task_tracker.write_json(task)
+    id_task={"id2" : task}
+    task_tracker.write_json(id_task)
     
     
 @tracker.command('update',short_help="Update status of your task")
